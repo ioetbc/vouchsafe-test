@@ -119,7 +119,7 @@ export class PhoneNumberRisk implements RiskFactor {
       : undefined;
   }
 
-  private async fictitiousNumber(): Risk {
+  private async reservedOfcomNumbers(): Risk {
     const normalisedPhoneNumber = this.normalisePhoneNumber(this.phone);
 
     const range = {start: 7700900000, end: 7700900999};
@@ -137,13 +137,13 @@ export class PhoneNumberRisk implements RiskFactor {
   }
 
   async evaluateLocalRisk(): Promise<RiskScore> {
-    const fictitiousNumber = await this.fictitiousNumber();
+    const isReservedOfcomNumber = await this.reservedOfcomNumbers();
 
-    if (fictitiousNumber) {
+    if (isReservedOfcomNumber) {
       return {
         suspect: true,
         score: 1,
-        results: [fictitiousNumber],
+        results: [isReservedOfcomNumber],
       };
     }
 

@@ -8,9 +8,6 @@ export const WEIGHTS: Weights = {
 };
 
 const validPhoneNumber = "+447493774943";
-const invalidPhoneNumber = "+15005550001";
-const phoneNumberUnavailable = "+15005550000";
-
 const pumpingRisk = "+447772000001";
 const fictitiousNumber = "7700900001";
 const voipCarrier = "+441234567890"; // no working
