@@ -45,7 +45,6 @@ export class PhoneNumberRisk implements RiskFactor {
         });
 
       cache.set(this.phone, risk);
-      console.log("risk", risk);
       return risk;
     } catch (error) {
       console.error(`Twilio lookup failed for ${this.phone}:`, error);
@@ -67,7 +66,6 @@ export class PhoneNumberRisk implements RiskFactor {
 
   private async smsPumpingRisk(): Risk {
     const twilio = await this.twilioPhoneNumberLookup();
-
     const isSmsPumping = twilio?.smsPumpingRisk.sms_pumping_risk_score > 20;
 
     return isSmsPumping
@@ -147,6 +145,8 @@ export class PhoneNumberRisk implements RiskFactor {
         results: [isReservedOfcomNumber],
       };
     }
+
+    // Check to see that it looks like a real number
 
     const checks = [
       this.reverseNumberLookup,

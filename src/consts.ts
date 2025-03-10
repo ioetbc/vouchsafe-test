@@ -15,7 +15,7 @@ const numberBlocked = "+441234567891";
 const recentSimSwap = "+441234567890";
 
 export const APPLICATION: Application = {
-  phone: recentSimSwap,
+  phone: pumpingRisk,
   email: "test@test.com",
   country: "GB",
   passportNumber: "1234567890",

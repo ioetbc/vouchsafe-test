@@ -1,7 +1,6 @@
 import {RiskScore} from "../types";
 import {promiseResults} from "../helpers/promise-results";
 import {sum} from "../helpers/sum";
-import {clamp} from "../helpers/clamp";
 
 export interface RiskFactor {
   evaluateLocalRisk(): Promise<RiskScore>;
@@ -24,7 +23,6 @@ export class RiskEngine {
   }
 
   calculateScore(results: RiskScore[]) {
-    console.log("results being calculated", results);
     const score = sum(results.map((result) => result.score));
 
     return score;
