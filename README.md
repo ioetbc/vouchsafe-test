@@ -6,21 +6,21 @@
 
 # Checks to perform
 
-[x] Country code matches application country address
-[x] Is a Voip number
-[x] Within reserved phone number rage (Ofcom)
-[x] SMS pumping risk
-[] Reverse phone number lookup to see if the number is associated with a known person or business
-[] See if the number has had a long usage history
-[] Spam call registries HLR Lookup
-[] There is probably a list of phony phone numbers somewhere, I have defo used 07777777779 before.
-[] User device to identify if the number is tied to that specific device
-[] A phone number that has no digital footprint is suspicious
-[] Check to see if the phone number was recently ported to a new sim
-[] Phone number been used on multiple devices
-[] Check to see if the phone number was pasted into the UI
-[] A honey pot input on the form which is only visible to bots
-[] Time to fill out a phone number. Quick inputs could be suspicious
+- [x] Country code matches application country address
+- [x] Is a Voip number
+- [x] Within reserved phone number rage (Ofcom)
+- [x] SMS pumping risk
+- [] Reverse phone number lookup to see if the number is associated with a known person or business
+- [] See if the number has had a long usage history
+- [] Spam call registries HLR Lookup
+- [] There is probably a list of phony phone numbers somewhere, I have defo used 07777777779 before.
+- [] User device to identify if the number is tied to that specific device
+- [] A phone number that has no digital footprint is suspicious
+- [] Check to see if the phone number was recently ported to a new sim
+- [] Phone number been used on multiple devices
+- [] Check to see if the phone number was pasted into the UI
+- [] A honey pot input on the form which is only visible to bots
+- [] Time to fill out a phone number. Quick inputs could be suspicious
 
 # Notes
 
