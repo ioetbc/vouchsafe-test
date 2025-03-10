@@ -14,7 +14,7 @@ interface HonoContext extends Context {
   application?: Application;
 }
 
-const app = new Hono();
+const app = new Hono().basePath("/api");
 
 const middleWare = async (context: HonoContext, next: Next) => {
   const application = await getApplication();
