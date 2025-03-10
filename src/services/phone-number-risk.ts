@@ -1,4 +1,5 @@
 import twilio from "twilio";
+import "dotenv/config";
 import {sum} from "../helpers/sum";
 import {RiskScore, Application, FactorResult} from "../types";
 import {VOIP_CARRIERS, WEIGHTS} from "../consts";
@@ -108,7 +109,7 @@ export class PhoneNumberRisk implements RiskFactor {
   }
 
   private async spamCallRegistry(): Risk {
-    const isSpamCallRegistry = true;
+    const isSpamCallRegistry = false;
 
     return isSpamCallRegistry
       ? {

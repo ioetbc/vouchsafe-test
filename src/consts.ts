@@ -11,9 +11,11 @@ const validPhoneNumber = "+447493774943";
 const pumpingRisk = "+447772000001";
 const fictitiousNumber = "7700900001";
 const voipCarrier = "+441234567890"; // no working
+const numberBlocked = "+441234567891";
+const recentSimSwap = "+441234567890";
 
 export const APPLICATION: Application = {
-  phone: pumpingRisk,
+  phone: recentSimSwap,
   email: "test@test.com",
   country: "GB",
   passportNumber: "1234567890",
