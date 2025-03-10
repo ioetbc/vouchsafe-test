@@ -1,8 +1,9 @@
 # How to run
 
-1. Add twillio env vars to `.env` take a look at `env.example`
-2. `pnpm run`
-3. `curl http://localhost:3000/api/risk-engine`
+1. `pnpm i`
+2. Add twillio env vars to `.env` take a look at `env.example`
+3. `pnpm run`
+4. `curl http://localhost:3000/api/risk-engine`
 
 # Checks to perform
 
@@ -26,9 +27,11 @@
 
 A risk engine which accepts different risk factors (iv’e focused on the phone risk for now) but it could be extended in the future to include other data points such as email, face id, address etc.
 
-The idea is that each user begins with a perfect score of 1 meaning they are of no risk.
+The idea is that each user begins with a perfect score of 1 meaning they are of no risk. We then run various checks against their application and deduct from their initial score based on severity of failure. The more deductions, the higher the risk.
 
-We the run various checks against their application and deduct from their initial score based on severity of failure.
+Weights allow different risk factors to influence the overall risk score. We can make certain checks more influential by adjusting weights in the `WEIGHTS` object.
+
+The RiskEngine class aggregates results, while individual risk factor classes run their own independent checks
 
 1. ReverseNumberLookup
 2. VoiceOverInternetProtocol
@@ -37,9 +40,3 @@ We the run various checks against their application and deduct from their initia
 5. SpamCallRegistry
 
 A flag is raised if any checks indicate suspicious activity.
-
-The more deductions, the higher the risk.
-
-Weights allow different risk factors to influence the overall risk score. We can make certain checks more influential by adjusting weights in the `WEIGHTS` object.
-
-The RiskEngine class aggregates results, while individual risk factor classes run their own independent checks
